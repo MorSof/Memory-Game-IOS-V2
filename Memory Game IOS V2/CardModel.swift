@@ -24,9 +24,11 @@ class CardModel {
                 print(rand)
                 let firstCard = Card()
                 firstCard.imageName = "card\(rand)"
+                firstCard.index = generatedNumbersArray.count
                 generatedCardArray.append(firstCard)
                 let secondCard = Card()
                 secondCard.imageName = "card\(rand)"
+                secondCard.index = generatedNumbersArray.count
                 generatedCardArray.append(secondCard)
                 
                 generatedNumbersArray.append(Int(rand))

@@ -10,6 +10,7 @@ import Foundation
 
 class Card {
     
+    var index: Int?
     var imageName = ""
     var isFlipped = false
     var isMatch = false
