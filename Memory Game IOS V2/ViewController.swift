@@ -10,9 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var allCardsStack: UIStackView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        addingRows()
+        
+    }
+    
+    func addingRows(){
+        
+        for i in 0...4 {
+            allCardsStack.addArrangedSubview(generateHorizontalStackView())
+        }
+        
+    }
+    
+    func generateHorizontalStackView() -> UIStackView{
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.spacing = 5
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+                
+        return stackView
+
     }
 
 
