@@ -69,9 +69,9 @@ class ViewController: UIViewController {
             }else{
                 tappedImage.image = image
                 secondFlippedCard = tappedImage
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.secondCardChosen(card, tappedImage)
-                }
+               
+                secondCardChosen(card, tappedImage)
+                
                 
             }
         }
@@ -81,13 +81,17 @@ class ViewController: UIViewController {
                 
         if(isEqualCards()){
             whenEqualLogic()
-
+            self.firstFlippedCard = nil
+            self.secondFlippedCard = nil
         }else{
-             whenNotEqualLogic()
+             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.whenNotEqualLogic()
+                self.firstFlippedCard = nil
+                self.secondFlippedCard = nil
+            }
         }
         
-        self.firstFlippedCard = nil
-        self.secondFlippedCard = nil
+        
     }
     
     func isEqualCards() -> Bool {
