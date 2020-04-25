@@ -53,6 +53,7 @@
                     </view>
                     <connections>
                         <outlet property="allCardsStack" destination="LFb-Ic-RtK" id="F0W-AW-rNE"/>
+                        <outlet property="timerLabel" destination="YaO-OG-BuR" id="vf5-q2-tey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

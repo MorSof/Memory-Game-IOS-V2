@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var allCardsStack: UIStackView!
+    @IBOutlet weak var timerLabel: UILabel!
     var model = CardModel()
     var cardArray = [Card]()
     var dict = [UIImageView: Card]()
@@ -25,8 +26,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         cardArray = model.getCards()
         addingRows()
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerRuninng), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
         
+    }
+    
+    @objc func timerRuninng() {
+        actualTime -= 1
+        timerLabel.text = String(format: "Time Left: %.2f", actualTime/1000)
         
+        if (actualTime <= 0) {
+            timer?.invalidate()
+            timerLabel.textColor = UIColor.red
+            checkGameOver()
+        }
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
