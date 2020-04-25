@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     var cardArray = [Card]()
     var dict = [UIImageView: Card]()
     var cardIndex = 0
+    var timer:Timer?
+    var actualTime:Float = 100000
+    var firstFlippedCard:UIImageView?
+    var secondFlippedCard:UIImageView?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +32,126 @@ class ViewController: UIViewController {
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
-        let image : UIImage = UIImage(named: dict[tappedImage]?.imageName ?? "")!
-        tappedImage.image = image
+        gameLogic(tappedImage)
     }
     
-    func gameLogic(){
+    func gameLogic(_ tappedImage: UIImageView) {
+        
+        if actualTime <= 0 {//when time is up stop logic
+            return
+        }
+        
+        let card = dict[tappedImage]!
+        let image : UIImage = UIImage(named: card.imageName )!
+        
+        if(card.isFlipped == false && card.isMatch == false && secondFlippedCard == nil){
+            
+            print(card.imageName)
+            card.isFlipped = true
+//            SoundManager.playSound(.flip)
+
+            if(firstFlippedCard == nil){
+                tappedImage.image = image
+                firstFlippedCard = tappedImage
+            }else{
+                tappedImage.image = image
+                secondFlippedCard = tappedImage
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.secondCardChosen(card, tappedImage)
+                }
+                
+            }
+        }
+    }
+    
+    func secondCardChosen(_ card: Card, _ tappedImage: UIImageView) {
+                
+        if(isEqualCards()){
+            whenEqualLogic()
+
+        }else{
+             whenNotEqualLogic()
+        }
+        
+        self.firstFlippedCard = nil
+        self.secondFlippedCard = nil
+    }
+    
+    func isEqualCards() -> Bool {
+        
+        if(firstFlippedCard?.image == secondFlippedCard?.image){
+            return true
+        }
+
+        return false
+        
+    }
+    
+    func whenEqualLogic() {
+      
+//        SoundManager.playSound(.match)
+        dict[firstFlippedCard!]?.isMatch = true
+        dict[secondFlippedCard!]?.isMatch = true
+//        firstFlippedCardCell?.remove()
+//        secondFlippedCardCell?.remove()
+        print("yes!")
+
+        checkGameOver()
+
+    }
+    
+    func whenNotEqualLogic() {
+        let image : UIImage = UIImage(named:"back")!
+//        SoundManager.playSound(.nomatch)
+        dict[firstFlippedCard!]?.isFlipped = false
+        dict[secondFlippedCard!]?.isFlipped = false
+        
+            self.firstFlippedCard?.image = image
+            self.secondFlippedCard?.image = image
+        
+       
+        print("no!")
+        
+    }
+    
+    func checkGameOver() {
+        
+        var isWon = true
+        
+        for card in cardArray {
+            
+            if card.isMatch == false {
+                isWon = false
+                break
+            }
+            
+        }
+        
+        let titel = "Game Over"
+        var message = ""
+        
+        if isWon == true{
+            if actualTime > 0 {
+                timer?.invalidate()
+            }
+            message = "You Won"
+        }
+        else {
+            if actualTime > 0 {
+                return
+            }
+            message = "You Suck!"
+        }
+        
+       showAlert(titel, message)
+        
+    }
+    
+    func showAlert( _ title:String, _ message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
     }
     
     
@@ -67,9 +187,8 @@ class ViewController: UIViewController {
         return stackView
 
     }
-
     
-    
+   
 
 }
 
