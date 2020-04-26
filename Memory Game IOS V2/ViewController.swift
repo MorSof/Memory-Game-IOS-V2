@@ -191,7 +191,7 @@ class ViewController: UIViewController {
         
         let image : UIImage = UIImage(named:"back")!
 
-        for i in 0...2 {
+        for i in 0...3 {
             let imageView = UIImageView(image: image)
             dict[imageView] = cardArray[cardIndex]
             cardIndex+=1

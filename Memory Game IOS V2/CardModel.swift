@@ -16,7 +16,7 @@ class CardModel {
         
         var generatedCardArray = [Card] ()
         
-        while generatedNumbersArray.count < 6 {
+        while generatedNumbersArray.count < 8 {
             
             let rand = arc4random_uniform(13) + 1
             
