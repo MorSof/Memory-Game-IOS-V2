@@ -15,56 +15,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" id="h0U-gh-5jg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="iEJ-2F-tMD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="4KD-py-F6U">
-                                <rect key="frame" x="0.0" y="114" width="414" height="348"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tropical Match Game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cw7-9E-WCJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="162.5"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="62"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kd4-ug-YPp">
-                                        <rect key="frame" x="0.0" y="245.5" width="414" height="101"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="60"/>
-                                        <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Lets Go!" backgroundImage="rectangle.fill" catalog="system">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="letsGoButton:" destination="rEm-Hr-45c" eventType="touchUpInside" id="KFh-2e-8iL"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kd4-ug-YPp">
+                                <rect key="frame" x="0.0" y="353" width="414" height="97.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="e8y-Cd-YE5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="60"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Lets Go!" backgroundImage="rectangle.fill" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="letsGoButton:" destination="rEm-Hr-45c" eventType="touchUpInside" id="KFh-2e-8iL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tropical Match Game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cw7-9E-WCJ">
+                                <rect key="frame" x="0.0" y="80" width="414" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="PQp-nF-fM7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="62"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="4KD-py-F6U" firstAttribute="leading" secondItem="Sbn-Yv-POO" secondAttribute="leading" id="4tb-QX-672"/>
-                            <constraint firstItem="4KD-py-F6U" firstAttribute="top" secondItem="Sbn-Yv-POO" secondAttribute="top" constant="70" id="5uB-3b-tOs"/>
-                            <constraint firstAttribute="trailing" secondItem="4KD-py-F6U" secondAttribute="trailing" id="NkE-Qf-JqS"/>
-                            <constraint firstItem="4KD-py-F6U" firstAttribute="bottom" secondItem="Sbn-Yv-POO" secondAttribute="bottom" constant="-400" id="gn0-Tv-8QP"/>
+                            <constraint firstAttribute="bottom" secondItem="iEJ-2F-tMD" secondAttribute="bottom" id="63x-t6-2hI"/>
+                            <constraint firstItem="iEJ-2F-tMD" firstAttribute="leading" secondItem="vFI-Al-EG9" secondAttribute="leading" id="9aM-Qb-JUI"/>
+                            <constraint firstItem="kd4-ug-YPp" firstAttribute="leading" secondItem="Sbn-Yv-POO" secondAttribute="leading" id="Ce7-og-eiS"/>
+                            <constraint firstAttribute="trailing" secondItem="iEJ-2F-tMD" secondAttribute="trailing" id="DQt-h0-n0d"/>
+                            <constraint firstItem="iEJ-2F-tMD" firstAttribute="top" secondItem="vFI-Al-EG9" secondAttribute="top" id="GUy-EY-YGc"/>
+                            <constraint firstItem="cw7-9E-WCJ" firstAttribute="leading" secondItem="Sbn-Yv-POO" secondAttribute="leading" id="H1b-nc-Pyp"/>
+                            <constraint firstItem="Sbn-Yv-POO" firstAttribute="trailing" secondItem="cw7-9E-WCJ" secondAttribute="trailing" id="Lwb-49-Qyc"/>
+                            <constraint firstItem="kd4-ug-YPp" firstAttribute="top" secondItem="cw7-9E-WCJ" secondAttribute="bottom" constant="72" id="N67-bc-0ba"/>
+                            <constraint firstItem="cw7-9E-WCJ" firstAttribute="top" secondItem="Sbn-Yv-POO" secondAttribute="top" constant="36" id="Xad-7M-jKG"/>
+                            <constraint firstItem="Sbn-Yv-POO" firstAttribute="trailing" secondItem="kd4-ug-YPp" secondAttribute="trailing" id="blC-pL-9s5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sbn-Yv-POO"/>
                     </view>
                     <connections>
+                        <outlet property="titleLabel" destination="cw7-9E-WCJ" id="9Fj-bL-jzb"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="gameTransition" modalPresentationStyle="fullScreen" id="xj0-u1-mYu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnt-vS-Zlh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-613.04347826086962" y="129.91071428571428"/>
+            <point key="canvasLocation" x="-613.60000000000002" y="129.08545727136433"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Memory_Game_IOS_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Memory_Game_IOS_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,7 +85,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-Ic-RtK">
                                         <rect key="frame" x="0.0" y="0.0" width="352" height="612"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Whq-Gf-ASa">
+                                    <stackView opaque="NO" contentMode="center" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Whq-Gf-ASa">
                                         <rect key="frame" x="0.0" y="642" width="352" height="136"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVS-j3-UDL">
@@ -121,16 +128,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZOC-ey-GuF"/>
                     <connections>
                         <outlet property="allCardsStack" destination="LFb-Ic-RtK" id="nxI-Ka-s8Q"/>
+                        <outlet property="dataStackView" destination="Whq-Gf-ASa" id="UoS-PF-GSc"/>
                         <outlet property="movesLabel" destination="gVS-j3-UDL" id="oOf-4j-mNW"/>
                         <outlet property="timerLabel" destination="hAE-ka-FSu" id="ytp-dh-3Ju"/>
+                        <segue destination="rEm-Hr-45c" kind="presentation" identifier="playAgainTransition" modalPresentationStyle="fullScreen" id="0TL-ht-S75"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+            <point key="canvasLocation" x="177" y="130"/>
         </scene>
     </scenes>
     <resources>

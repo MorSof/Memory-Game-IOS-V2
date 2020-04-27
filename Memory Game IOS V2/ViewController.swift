@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var allCardsStack: UIStackView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var movesLabel: UILabel!
+    @IBOutlet weak var playAgainButton: UIButton!
     var model = CardModel()
     var cardArray = [Card]()
     var dict = [UIImageView: Card]()
@@ -23,13 +24,15 @@ class ViewController: UIViewController {
     var actualTime:Float = 100000
     var firstFlippedCard:UIImageView?
     var secondFlippedCard:UIImageView?
-
+    var isWon = true
+    @IBOutlet weak var dataStackView: UIStackView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cardArray = model.getCards()
         addingRows()
-        movesLabel.text = "Moves \(num_of_moves)"
+        movesLabel.text = "Moves: \(num_of_moves)"
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerRuninng), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
         
@@ -138,8 +141,7 @@ class ViewController: UIViewController {
     
     func checkGameOver() {
         
-        var isWon = true
-        
+        isWon = true
         for card in cardArray {
             
             if card.isMatch == false {
@@ -163,11 +165,30 @@ class ViewController: UIViewController {
                 return
             }
             message = "You Suck!"
+            
+//            playAgainButton.backgroundColor = UIColor.systemGreen
+//                playAgainButton.setTitle("Play Again! ", for: .normal)
+//             playAgainButton.titleLabel!.font =  UIFont(name: "Marker Felt", size: 20)
+//            playAgainButton.setTitleColor(UIColor.black, for: .normal)
+//            playAgainButton.frame.size = CGSize(width: 30, height: 20)
+
         }
         
-       showAlert(titel, message)
+//       showAlert(titel, message)
+        performSegue(withIdentifier: "playAgainTransition", sender: self)
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! OpenViewController
+        if isWon {
+            vc.titleName = "Game Over You Won!"
+
+        }else {
+            vc.titleName = "Game Over You Lost!"
+
+        }
+       }
     
     func showAlert( _ title:String, _ message:String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -181,9 +202,9 @@ class ViewController: UIViewController {
     func addingRows(){
         
         for _ in 0...3 {
-            allCardsStack.addArrangedSubview(generateHorizontalStackView())
+        allCardsStack.addArrangedSubview(generateHorizontalStackView())
         }
-        
+                
     }
     
     func generateHorizontalStackView() -> UIStackView{
@@ -205,7 +226,9 @@ class ViewController: UIViewController {
             imageView.addGestureRecognizer(tapGestureRecognizer)
             
             stackView.addArrangedSubview(imageView)
+            
         }
+
         return stackView
 
     }
