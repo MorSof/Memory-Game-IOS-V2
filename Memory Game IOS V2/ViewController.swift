@@ -10,12 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var allCardsStack: UIStackView!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var movesLabel: UILabel!
     var model = CardModel()
     var cardArray = [Card]()
     var dict = [UIImageView: Card]()
     var cardIndex = 0
+    var num_of_moves: Int = 0
     var timer:Timer?
     var actualTime:Float = 100000
     var firstFlippedCard:UIImageView?
@@ -26,6 +29,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         cardArray = model.getCards()
         addingRows()
+        movesLabel.text = "Moves \(num_of_moves)"
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerRuninng), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
         
@@ -78,7 +82,8 @@ class ViewController: UIViewController {
     }
     
     func secondCardChosen(_ card: Card, _ tappedImage: UIImageView) {
-                
+        num_of_moves += 1
+        movesLabel.text = "Moves \(self.num_of_moves)"
         if(isEqualCards()){
             whenEqualLogic()
             self.firstFlippedCard = nil
@@ -175,7 +180,7 @@ class ViewController: UIViewController {
     
     func addingRows(){
         
-        for i in 0...3 {
+        for _ in 0...3 {
             allCardsStack.addArrangedSubview(generateHorizontalStackView())
         }
         
@@ -186,12 +191,12 @@ class ViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.alignment = .fill
-        stackView.spacing = 5
+        stackView.spacing = 20
     stackView.translatesAutoresizingMaskIntoConstraints = false
         
         let image : UIImage = UIImage(named:"back")!
 
-        for i in 0...3 {
+        for _ in 0...3 {
             let imageView = UIImageView(image: image)
             dict[imageView] = cardArray[cardIndex]
             cardIndex+=1

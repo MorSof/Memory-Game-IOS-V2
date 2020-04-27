@@ -18,21 +18,37 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ZEa-8W-oeh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="t6p-cJ-j5a">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="t6p-cJ-j5a">
+                                <rect key="frame" x="33" y="59" width="350" height="778"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaO-OG-BuR">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="VwX-xu-OrQ"/>
-                                            <constraint firstAttribute="width" constant="414" id="itQ-tV-hOj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-Ic-RtK">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="768"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-Ic-RtK">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="612"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Whq-Gf-ASa">
+                                        <rect key="frame" x="0.0" y="642" width="350" height="136"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVS-j3-UDL">
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="62"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="62" id="FHE-9Y-V6T"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="48"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAE-ka-FSu">
+                                                <rect key="frame" x="0.0" y="74" width="350" height="62"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="62" id="Dy9-oq-dtW"/>
+                                                    <constraint firstAttribute="width" constant="350" id="mXK-Ju-aAv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="45"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </label>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -42,26 +58,26 @@
                             <constraint firstAttribute="trailing" secondItem="ZEa-8W-oeh" secondAttribute="trailing" id="0Gl-WI-7ga"/>
                             <constraint firstItem="ZEa-8W-oeh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="I3J-7i-hKc"/>
                             <constraint firstAttribute="bottom" secondItem="ZEa-8W-oeh" secondAttribute="bottom" id="IFK-bv-KMq"/>
+                            <constraint firstItem="t6p-cJ-j5a" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-25" id="WQG-3q-IVf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZEa-8W-oeh" secondAttribute="trailing" id="XXC-Vg-TTt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t6p-cJ-j5a" secondAttribute="trailing" id="eIp-Zd-Cvh"/>
-                            <constraint firstItem="t6p-cJ-j5a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jsS-5e-7dB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="t6p-cJ-j5a" secondAttribute="bottom" id="lbg-L8-kGo"/>
-                            <constraint firstItem="t6p-cJ-j5a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tA6-tG-7wo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t6p-cJ-j5a" secondAttribute="trailing" constant="31" id="eIp-Zd-Cvh"/>
+                            <constraint firstItem="t6p-cJ-j5a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="tA6-tG-7wo"/>
                             <constraint firstItem="ZEa-8W-oeh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wxz-SG-s94"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="allCardsStack" destination="LFb-Ic-RtK" id="F0W-AW-rNE"/>
-                        <outlet property="timerLabel" destination="YaO-OG-BuR" id="vf5-q2-tey"/>
+                        <outlet property="allCardsStack" destination="LFb-Ic-RtK" id="nxI-Ka-s8Q"/>
+                        <outlet property="movesLabel" destination="gVS-j3-UDL" id="oOf-4j-mNW"/>
+                        <outlet property="timerLabel" destination="hAE-ka-FSu" id="ytp-dh-3Ju"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="130"/>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="736" height="414"/>
+        <image name="background" width="500" height="348"/>
     </resources>
 </document>
