@@ -10,17 +10,20 @@ import UIKit
 
 class OpenViewController: UIViewController {
 
+    var titleName = "Tropical Match Game"
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        titleLabel.text = titleName
         // Do any additional setup after loading the view.
     }
     
-
+    
     @IBAction func letsGoButton(_ sender: Any) {
         performSegue(withIdentifier: "gameTransition", sender: self)
     }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
