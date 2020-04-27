@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rEm-Hr-45c">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,6 +7,60 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Open View Controller-->
+        <scene sceneID="6WV-BA-Oxu">
+            <objects>
+                <viewController id="rEm-Hr-45c" customClass="OpenViewController" customModule="Memory_Game_IOS_V2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vFI-Al-EG9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" id="h0U-gh-5jg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="4KD-py-F6U">
+                                <rect key="frame" x="0.0" y="114" width="414" height="348"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tropical Match Game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cw7-9E-WCJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="162.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="62"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kd4-ug-YPp">
+                                        <rect key="frame" x="0.0" y="245.5" width="414" height="101"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="60"/>
+                                        <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Lets Go!" backgroundImage="rectangle.fill" catalog="system">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="letsGoButton:" destination="rEm-Hr-45c" eventType="touchUpInside" id="KFh-2e-8iL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4KD-py-F6U" firstAttribute="leading" secondItem="Sbn-Yv-POO" secondAttribute="leading" id="4tb-QX-672"/>
+                            <constraint firstItem="4KD-py-F6U" firstAttribute="top" secondItem="Sbn-Yv-POO" secondAttribute="top" constant="70" id="5uB-3b-tOs"/>
+                            <constraint firstAttribute="trailing" secondItem="4KD-py-F6U" secondAttribute="trailing" id="NkE-Qf-JqS"/>
+                            <constraint firstItem="4KD-py-F6U" firstAttribute="bottom" secondItem="Sbn-Yv-POO" secondAttribute="bottom" constant="-400" id="gn0-Tv-8QP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sbn-Yv-POO"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="gameTransition" modalPresentationStyle="fullScreen" id="xj0-u1-mYu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lnt-vS-Zlh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-613.04347826086962" y="129.91071428571428"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,16 +73,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="t6p-cJ-j5a">
-                                <rect key="frame" x="33" y="59" width="350" height="778"/>
+                                <rect key="frame" x="31" y="59" width="352" height="778"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-Ic-RtK">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="612"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="612"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Whq-Gf-ASa">
-                                        <rect key="frame" x="0.0" y="642" width="350" height="136"/>
+                                    <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Whq-Gf-ASa">
+                                        <rect key="frame" x="0.0" y="642" width="352" height="136"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVS-j3-UDL">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="62"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="352" height="62"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="62" id="FHE-9Y-V6T"/>
                                                 </constraints>
@@ -38,10 +92,9 @@
                                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAE-ka-FSu">
-                                                <rect key="frame" x="0.0" y="74" width="350" height="62"/>
+                                                <rect key="frame" x="0.0" y="74" width="352" height="62"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="62" id="Dy9-oq-dtW"/>
-                                                    <constraint firstAttribute="width" constant="350" id="mXK-Ju-aAv"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="45"/>
                                                 <nil key="textColor"/>
@@ -56,16 +109,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ZEa-8W-oeh" secondAttribute="trailing" id="0Gl-WI-7ga"/>
-                            <constraint firstItem="ZEa-8W-oeh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="I3J-7i-hKc"/>
                             <constraint firstAttribute="bottom" secondItem="ZEa-8W-oeh" secondAttribute="bottom" id="IFK-bv-KMq"/>
+                            <constraint firstItem="t6p-cJ-j5a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="UvQ-89-HCI"/>
                             <constraint firstItem="t6p-cJ-j5a" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-25" id="WQG-3q-IVf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZEa-8W-oeh" secondAttribute="trailing" id="XXC-Vg-TTt"/>
+                            <constraint firstItem="ZEa-8W-oeh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XwN-lk-eP8"/>
+                            <constraint firstAttribute="bottom" secondItem="ZEa-8W-oeh" secondAttribute="bottom" id="YJJ-ts-H31"/>
+                            <constraint firstItem="ZEa-8W-oeh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="afk-cb-uwp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t6p-cJ-j5a" secondAttribute="trailing" constant="31" id="eIp-Zd-Cvh"/>
                             <constraint firstItem="t6p-cJ-j5a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="tA6-tG-7wo"/>
-                            <constraint firstItem="ZEa-8W-oeh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wxz-SG-s94"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZOC-ey-GuF"/>
                     <connections>
                         <outlet property="allCardsStack" destination="LFb-Ic-RtK" id="nxI-Ka-s8Q"/>
                         <outlet property="movesLabel" destination="gVS-j3-UDL" id="oOf-4j-mNW"/>
@@ -79,5 +135,6 @@
     </scenes>
     <resources>
         <image name="background" width="500" height="348"/>
+        <image name="rectangle.fill" catalog="system" width="64" height="46"/>
     </resources>
 </document>
