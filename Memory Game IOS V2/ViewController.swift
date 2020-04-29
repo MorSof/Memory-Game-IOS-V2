@@ -35,6 +35,8 @@ class ViewController: UIViewController {
         movesLabel.text = "Moves: \(num_of_moves)"
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerRuninng), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
+        SoundManager.playSound(.shuffle)
+
         
     }
     
@@ -68,7 +70,7 @@ class ViewController: UIViewController {
             
             print(card.imageName)
             card.isFlipped = true
-//            SoundManager.playSound(.flip)
+            SoundManager.playSound(.flip)
 
             if(firstFlippedCard == nil){
                 tappedImage.image = image
@@ -114,29 +116,20 @@ class ViewController: UIViewController {
     
     func whenEqualLogic() {
       
-//        SoundManager.playSound(.match)
+        SoundManager.playSound(.match)
         dict[firstFlippedCard!]?.isMatch = true
         dict[secondFlippedCard!]?.isMatch = true
-//        firstFlippedCardCell?.remove()
-//        secondFlippedCardCell?.remove()
-        print("yes!")
-
         checkGameOver()
 
     }
     
     func whenNotEqualLogic() {
         let image : UIImage = UIImage(named:"back")!
-//        SoundManager.playSound(.nomatch)
+        SoundManager.playSound(.nomatch)
         dict[firstFlippedCard!]?.isFlipped = false
         dict[secondFlippedCard!]?.isFlipped = false
-        
-            self.firstFlippedCard?.image = image
-            self.secondFlippedCard?.image = image
-        
-       
-        print("no!")
-        
+        self.firstFlippedCard?.image = image
+        self.secondFlippedCard?.image = image
     }
     
     func checkGameOver() {
@@ -165,16 +158,8 @@ class ViewController: UIViewController {
                 return
             }
             message = "You Suck!"
-            
-//            playAgainButton.backgroundColor = UIColor.systemGreen
-//                playAgainButton.setTitle("Play Again! ", for: .normal)
-//             playAgainButton.titleLabel!.font =  UIFont(name: "Marker Felt", size: 20)
-//            playAgainButton.setTitleColor(UIColor.black, for: .normal)
-//            playAgainButton.frame.size = CGSize(width: 30, height: 20)
-
         }
         
-//       showAlert(titel, message)
         performSegue(withIdentifier: "playAgainTransition", sender: self)
         
     }
@@ -189,14 +174,6 @@ class ViewController: UIViewController {
 
         }
        }
-    
-    func showAlert( _ title:String, _ message:String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(alertAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
     
     
     func addingRows(){
@@ -220,7 +197,7 @@ class ViewController: UIViewController {
         for _ in 0...3 {
             let imageView = UIImageView(image: image)
             dict[imageView] = cardArray[cardIndex]
-            cardIndex+=1
+            cardIndex += 1
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
             imageView.isUserInteractionEnabled = true
             imageView.addGestureRecognizer(tapGestureRecognizer)
