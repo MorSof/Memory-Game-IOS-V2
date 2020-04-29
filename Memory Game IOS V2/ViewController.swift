@@ -31,12 +31,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cardArray = model.getCards()
-        addingRows()
+        addingCardRows()
         movesLabel.text = "Moves: \(num_of_moves)"
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerRuninng), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
-        SoundManager.playSound(.shuffle)
-
         
     }
     
@@ -44,7 +42,7 @@ class ViewController: UIViewController {
         actualTime -= 1
         timerLabel.text = String(format: "Time Left: %.2f", actualTime/1000)
         
-        if (actualTime <= 0) {
+        if actualTime <= 0 {
             timer?.invalidate()
             timerLabel.textColor = UIColor.red
             checkGameOver()
@@ -66,30 +64,29 @@ class ViewController: UIViewController {
         let card = dict[tappedImage]!
         let image : UIImage = UIImage(named: card.imageName )!
         
-        if(card.isFlipped == false && card.isMatch == false && secondFlippedCard == nil){
+        if card.isFlipped == false && card.isMatch == false && secondFlippedCard == nil{
             
-            print(card.imageName)
             card.isFlipped = true
             SoundManager.playSound(.flip)
-
-            if(firstFlippedCard == nil){
+            
+            if firstFlippedCard == nil {
                 tappedImage.image = image
                 firstFlippedCard = tappedImage
             }else{
                 tappedImage.image = image
                 secondFlippedCard = tappedImage
-               
                 secondCardChosen(card, tappedImage)
-                
-                
+                                
             }
         }
     }
     
     func secondCardChosen(_ card: Card, _ tappedImage: UIImageView) {
+        
         num_of_moves += 1
         movesLabel.text = "Moves \(self.num_of_moves)"
-        if(isEqualCards()){
+        
+        if isEqualCards() {
             whenEqualLogic()
             self.firstFlippedCard = nil
             self.secondFlippedCard = nil
@@ -105,22 +102,17 @@ class ViewController: UIViewController {
     }
     
     func isEqualCards() -> Bool {
-        
-        if(firstFlippedCard?.image == secondFlippedCard?.image){
+        if firstFlippedCard?.image == secondFlippedCard?.image {
             return true
         }
-
         return false
-        
     }
     
     func whenEqualLogic() {
-      
         SoundManager.playSound(.match)
         dict[firstFlippedCard!]?.isMatch = true
         dict[secondFlippedCard!]?.isMatch = true
         checkGameOver()
-
     }
     
     func whenNotEqualLogic() {
@@ -133,31 +125,19 @@ class ViewController: UIViewController {
     }
     
     func checkGameOver() {
-        
         isWon = true
         for card in cardArray {
-            
             if card.isMatch == false {
                 isWon = false
                 break
             }
-            
         }
         
-        let titel = "Game Over"
-        var message = ""
-        
-        if isWon == true{
-            if actualTime > 0 {
-                timer?.invalidate()
-            }
-            message = "You Won"
+        if isWon == true && actualTime > 0{
+            timer?.invalidate()
         }
-        else {
-            if actualTime > 0 {
-                return
-            }
-            message = "You Suck!"
+        else if actualTime > 0 {
+            return
         }
         
         performSegue(withIdentifier: "playAgainTransition", sender: self)
@@ -168,20 +148,16 @@ class ViewController: UIViewController {
         let vc = segue.destination as! OpenViewController
         if isWon {
             vc.titleName = "Game Over You Won!"
-
         }else {
             vc.titleName = "Game Over You Lost!"
-
         }
-       }
+    }
     
     
-    func addingRows(){
-        
+    func addingCardRows(){
         for _ in 0...3 {
         allCardsStack.addArrangedSubview(generateHorizontalStackView())
         }
-                
     }
     
     func generateHorizontalStackView() -> UIStackView{
@@ -190,27 +166,24 @@ class ViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.alignment = .fill
         stackView.spacing = 20
-    stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let image : UIImage = UIImage(named:"back")!
-
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         for _ in 0...3 {
-            let imageView = UIImageView(image: image)
-            dict[imageView] = cardArray[cardIndex]
-            cardIndex += 1
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-            imageView.isUserInteractionEnabled = true
-            imageView.addGestureRecognizer(tapGestureRecognizer)
-            
-            stackView.addArrangedSubview(imageView)
-            
+            stackView.addArrangedSubview(generateImageView())
         }
-
         return stackView
-
     }
     
-   
+   func generateImageView() -> UIImageView{
+        let image : UIImage = UIImage(named:"back")!
+        let imageView = UIImageView(image: image)
+        dict[imageView] = cardArray[cardIndex]
+        cardIndex += 1
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        return imageView
+    }
+
 
 }
 

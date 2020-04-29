@@ -21,7 +21,6 @@ class CardModel {
             let rand = arc4random_uniform(14) + 1
             
             if generatedNumbersArray.contains(Int(rand)) == false {
-                print(rand)
                 let firstCard = Card()
                 firstCard.imageName = "card\(rand)"
                 firstCard.index = generatedNumbersArray.count
@@ -30,7 +29,6 @@ class CardModel {
                 secondCard.imageName = "card\(rand)"
                 secondCard.index = generatedNumbersArray.count
                 generatedCardArray.append(secondCard)
-                
                 generatedNumbersArray.append(Int(rand))
             }
             
