@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
     @IBOutlet weak var allCardsStack: UIStackView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var movesLabel: UILabel!
@@ -25,8 +24,6 @@ class ViewController: UIViewController {
     var firstFlippedCard:UIImageView?
     var secondFlippedCard:UIImageView?
     var isWon = true
-    @IBOutlet weak var dataStackView: UIStackView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +32,6 @@ class ViewController: UIViewController {
         movesLabel.text = "Moves: \(num_of_moves)"
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerRuninng), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
-        
     }
     
     @objc func timerRuninng() {
@@ -49,8 +45,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         gameLogic(tappedImage)
     }
@@ -82,10 +77,8 @@ class ViewController: UIViewController {
     }
     
     func secondCardChosen(_ card: Card, _ tappedImage: UIImageView) {
-        
         num_of_moves += 1
         movesLabel.text = "Moves \(self.num_of_moves)"
-        
         if isEqualCards() {
             whenEqualLogic()
             self.firstFlippedCard = nil
@@ -97,8 +90,6 @@ class ViewController: UIViewController {
                 self.secondFlippedCard = nil
             }
         }
-        
-        
     }
     
     func isEqualCards() -> Bool {
@@ -132,16 +123,13 @@ class ViewController: UIViewController {
                 break
             }
         }
-        
         if isWon == true && actualTime > 0{
             timer?.invalidate()
         }
         else if actualTime > 0 {
             return
         }
-        
         performSegue(withIdentifier: "playAgainTransition", sender: self)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

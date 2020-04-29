@@ -11,15 +11,16 @@ import Foundation
 class CardModel {
 
     var generatedNumbersArray = [Int]()
+    let numOfCards = 16
+    let numOfCardImages = 14
     
     func getCards() -> [Card] {
         
         var generatedCardArray = [Card] ()
         
-        while generatedNumbersArray.count < 8 {
+        while generatedNumbersArray.count < numOfCards/2 {
             
-            let rand = arc4random_uniform(14) + 1
-            
+            let rand = arc4random_uniform(UInt32(numOfCardImages)) + 1
             if generatedNumbersArray.contains(Int(rand)) == false {
                 let firstCard = Card()
                 firstCard.imageName = "card\(rand)"

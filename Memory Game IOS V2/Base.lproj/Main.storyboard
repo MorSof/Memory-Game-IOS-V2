@@ -88,14 +88,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="66" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Whq-Gf-ASa">
                                         <rect key="frame" x="0.0" y="488.5" width="295" height="113.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVS-j3-UDL">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVS-j3-UDL">
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="54.5"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="41"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Time Left: 88.88" lineBreakMode="tailTruncation" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAE-ka-FSu">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Time Left: 88.88" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAE-ka-FSu">
                                                 <rect key="frame" x="0.0" y="70" width="295" height="43.5"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="37"/>
                                                 <nil key="textColor"/>
@@ -127,7 +127,6 @@
                     </view>
                     <connections>
                         <outlet property="allCardsStack" destination="LFb-Ic-RtK" id="nxI-Ka-s8Q"/>
-                        <outlet property="dataStackView" destination="Whq-Gf-ASa" id="UoS-PF-GSc"/>
                         <outlet property="movesLabel" destination="gVS-j3-UDL" id="oOf-4j-mNW"/>
                         <outlet property="timerLabel" destination="hAE-ka-FSu" id="ytp-dh-3Ju"/>
                         <segue destination="rEm-Hr-45c" kind="presentation" identifier="playAgainTransition" modalPresentationStyle="fullScreen" id="0TL-ht-S75"/>
