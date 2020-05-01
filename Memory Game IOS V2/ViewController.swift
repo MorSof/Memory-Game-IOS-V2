@@ -63,9 +63,8 @@ class ViewController: UIViewController {
             
             card.isFlipped = true
             SoundManager.playSound(.flip)
-            
+            flipCard(tappedImage, image: image)
             if firstFlippedCard == nil {
-                tappedImage.image = image
                 firstFlippedCard = tappedImage
             }else{
                 tappedImage.image = image
@@ -170,6 +169,12 @@ class ViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
         return imageView
+    }
+    
+    func flipCard(_ tappedImage: UIImageView, image : UIImage) {
+        UIView.transition(with: tappedImage, duration: 0.3, options: .transitionFlipFromRight, animations:{
+                           tappedImage.image = image
+            })
     }
 
 
