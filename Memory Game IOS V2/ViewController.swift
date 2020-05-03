@@ -25,6 +25,10 @@ class ViewController: UIViewController {
     var secondFlippedCard:UIImageView?
     var isWon = true
     
+    override func viewDidAppear(_ animated: Bool) {
+        SoundManager.playSound(.shuffle)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cardArray = model.getCards()
