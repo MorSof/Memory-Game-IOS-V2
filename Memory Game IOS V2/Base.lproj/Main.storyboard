@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kd4-ug-YPp">
-                                <rect key="frame" x="0.0" y="309" width="375" height="97.5"/>
+                                <rect key="frame" x="0.0" y="201" width="375" height="97.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="e8y-Cd-YE5"/>
                                 </constraints>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tropical Match Game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cw7-9E-WCJ">
-                                <rect key="frame" x="0.0" y="36" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="PQp-nF-fM7"/>
                                 </constraints>
@@ -43,18 +43,33 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybT-Qo-L6J">
+                                <rect key="frame" x="0.0" y="306" width="375" height="97.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7QU-eg-rRv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="60"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" backgroundImage="rectangle.fill" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="ybT-Qo-L6J" firstAttribute="leading" secondItem="Sbn-Yv-POO" secondAttribute="leading" id="2ha-c5-VRH"/>
                             <constraint firstAttribute="bottom" secondItem="iEJ-2F-tMD" secondAttribute="bottom" id="63x-t6-2hI"/>
                             <constraint firstItem="iEJ-2F-tMD" firstAttribute="leading" secondItem="vFI-Al-EG9" secondAttribute="leading" id="9aM-Qb-JUI"/>
+                            <constraint firstItem="ybT-Qo-L6J" firstAttribute="top" secondItem="kd4-ug-YPp" secondAttribute="bottom" constant="5" id="A6J-ne-031"/>
                             <constraint firstItem="kd4-ug-YPp" firstAttribute="leading" secondItem="Sbn-Yv-POO" secondAttribute="leading" id="Ce7-og-eiS"/>
                             <constraint firstAttribute="trailing" secondItem="iEJ-2F-tMD" secondAttribute="trailing" id="DQt-h0-n0d"/>
+                            <constraint firstAttribute="trailing" secondItem="ybT-Qo-L6J" secondAttribute="trailing" id="G2v-oP-BSr"/>
+                            <constraint firstItem="cw7-9E-WCJ" firstAttribute="top" secondItem="Sbn-Yv-POO" secondAttribute="top" id="GEy-Uk-fba"/>
                             <constraint firstItem="iEJ-2F-tMD" firstAttribute="top" secondItem="vFI-Al-EG9" secondAttribute="top" id="GUy-EY-YGc"/>
                             <constraint firstItem="cw7-9E-WCJ" firstAttribute="leading" secondItem="Sbn-Yv-POO" secondAttribute="leading" id="H1b-nc-Pyp"/>
                             <constraint firstItem="Sbn-Yv-POO" firstAttribute="trailing" secondItem="cw7-9E-WCJ" secondAttribute="trailing" id="Lwb-49-Qyc"/>
-                            <constraint firstItem="kd4-ug-YPp" firstAttribute="top" secondItem="cw7-9E-WCJ" secondAttribute="bottom" constant="72" id="N67-bc-0ba"/>
-                            <constraint firstItem="cw7-9E-WCJ" firstAttribute="top" secondItem="Sbn-Yv-POO" secondAttribute="top" constant="36" id="Xad-7M-jKG"/>
+                            <constraint firstItem="kd4-ug-YPp" firstAttribute="top" secondItem="cw7-9E-WCJ" secondAttribute="bottom" id="S2L-ri-bcw"/>
                             <constraint firstItem="Sbn-Yv-POO" firstAttribute="trailing" secondItem="kd4-ug-YPp" secondAttribute="trailing" id="blC-pL-9s5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sbn-Yv-POO"/>
