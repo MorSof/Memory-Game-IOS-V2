@@ -11,8 +11,12 @@ import Foundation
 class CardModel {
 
     var generatedNumbersArray = [Int]()
-    let numOfCards = 16
+    var numOfCards: Int!
     let numOfCardImages = 14
+    var iter: Int!;
+    init(numOfCards: Int!) {
+        self.numOfCards = numOfCards
+    }
     
     func getCards() -> [Card] {
         

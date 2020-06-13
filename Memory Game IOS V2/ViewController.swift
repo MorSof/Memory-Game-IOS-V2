@@ -13,17 +13,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var allCardsStack: UIStackView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var movesLabel: UILabel!
-    @IBOutlet weak var playAgainButton: UIButton!
-    var model = CardModel()
     var cardArray = [Card]()
     var dict = [UIImageView: Card]()
     var cardIndex = 0
     var num_of_moves: Int = 0
     var timer:Timer?
-    var actualTime:Float = 100000
+    var actualTime:Float = 0
     var firstFlippedCard:UIImageView?
     var secondFlippedCard:UIImageView?
     var isWon = true
+    var gameStatus: GameStatus!
     
     override func viewDidAppear(_ animated: Bool) {
         SoundManager.playSound(.shuffle)
@@ -31,7 +30,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cardArray = model.getCards()
+        cardArray = CardModel(numOfCards: gameStatus.get_num_of_cards()).getCards()
         addingCardRows()
         movesLabel.text = "Moves: \(num_of_moves)"
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerRuninng), userInfo: nil, repeats: true)
@@ -39,14 +38,14 @@ class ViewController: UIViewController {
     }
     
     @objc func timerRuninng() {
-        actualTime -= 1
-        timerLabel.text = String(format: "Time Left: %.2f", actualTime/1000)
+        actualTime += 1
+        timerLabel.text = String(format: "Time: %.2f", actualTime/1000)
         
-        if actualTime <= 0 {
-            timer?.invalidate()
-            timerLabel.textColor = UIColor.red
-            checkGameOver()
-        }
+//        if actualTime <= 0 {
+//            timer?.invalidate()
+//            timerLabel.textColor = UIColor.red
+//            checkGameOver()
+//        }
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -126,27 +125,32 @@ class ViewController: UIViewController {
                 break
             }
         }
-        if isWon == true && actualTime > 0{
+        if isWon == true{
             timer?.invalidate()
+            performSegue(withIdentifier: "myScoreTransition", sender: self)
         }
-        else if actualTime > 0 {
-            return
-        }
-        performSegue(withIdentifier: "playAgainTransition", sender: self)
+        return
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! OpenViewController
-        if isWon {
-            vc.titleName = "Game Over You Won!"
-        }else {
-            vc.titleName = "Game Over You Lost!"
+        if(segue.identifier == "myScoreTransition"){
+        let scoreViewController = segue.destination as! ScoreViewController
+//        if isWon {
+//            vc.titleName = "Game Over You Won!"
+//        }else {
+//            vc.titleName = "Game Over You Lost!"
+//        }
+        scoreViewController.actualTime = Int(actualTime)
+        scoreViewController.num_of_moves = num_of_moves
+//        scoreViewController.lastGameNumOfRows = numOfRows
+//        scoreViewController.lastGameNumOfCardsPerRow = numOfCardsPerRow
+//        scoreViewController.userHighScore = HighScore(name: name, time: timePassed, location: myLocation,date: Date())
         }
     }
     
     
     func addingCardRows(){
-        for _ in 0...3 {
+        for _ in 0..<gameStatus.get_num_of_rows() {
         allCardsStack.addArrangedSubview(generateHorizontalStackView())
         }
     }
@@ -158,7 +162,7 @@ class ViewController: UIViewController {
         stackView.alignment = .fill
         stackView.spacing = 20
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        for _ in 0...3 {
+        for _ in 0..<gameStatus.get_num_of_cols() {
             stackView.addArrangedSubview(generateImageView())
         }
         return stackView
