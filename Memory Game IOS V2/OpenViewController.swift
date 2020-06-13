@@ -9,21 +9,46 @@
 import UIKit
 
 class OpenViewController: UIViewController {
-
-    var titleName = "Tropical Match Game"
-    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var BTN_lets_go: UIButton!
+    @IBOutlet weak var TXT_name: UITextField!
+    var gameStatus: GameStatus!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = titleName
     }
     
     @IBAction func letsGoButton(_ sender: Any) {
+        if TXT_name.text == "" {
+            gameStatus.set_name(name: "Player")
+        }else{
+            gameStatus.set_name(name: TXT_name.text)
+        }
         performSegue(withIdentifier: "gameTransition", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func BTN_return(_ sender: UIButton) {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
         
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "gameTransition"){
+            let vc = segue.destination as! ViewController
+            if(gameStatus.get_level() == "Easy"){
+                gameStatus.set_num_of_cards(num_of_cards: 12)
+                gameStatus.set_num_of_rows(num_of_rows: 3)
+                gameStatus.set_num_of_cols(num_of_cols: 4)
+            } else if (gameStatus.get_level() == "Hard"){
+                gameStatus.set_num_of_cards(num_of_cards: 16)
+                gameStatus.set_num_of_rows(num_of_rows: 4)
+                gameStatus.set_num_of_cols(num_of_cols: 4)
+            }
+            vc.gameStatus = gameStatus
+    
+        }
+    }
 }
