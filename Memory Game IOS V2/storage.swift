@@ -32,7 +32,7 @@ class Storage {
         do {
             return try decoder.decode([ScoreDetails].self, from: data)
         } catch {
-            print("somthing went wrong in fromJsonToHighScoreList")
+            print("somthing went wrong in convertJsonToScoreDetails")
         }
         return [ScoreDetails]()
     }

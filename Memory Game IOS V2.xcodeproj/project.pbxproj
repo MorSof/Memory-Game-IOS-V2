@@ -29,7 +29,8 @@
 		DF4B9FBA24598BE500534D32 /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = DF4B9FB624598BE500534D32 /* dingwrong.wav */; };
 		DF4B9FBB24598BE500534D32 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = DF4B9FB724598BE500534D32 /* shuffle.wav */; };
 		DF4B9FBC24598BE500534D32 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = DF4B9FB824598BE500534D32 /* cardflip.wav */; };
-		DF9AC8F424952A6200781F67 /* TimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9AC8F324952A6200781F67 /* TimeUtil.swift */; };
+		DF5E258524968C73001AEE57 /* TimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5E258424968C73001AEE57 /* TimeUtil.swift */; };
+		DF5E258B2496A2DD001AEE57 /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5E258A2496A2DD001AEE57 /* MyCustomCell.swift */; };
 		DF9AC8F624952D2B00781F67 /* storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9AC8F524952D2B00781F67 /* storage.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +80,8 @@
 		DF4B9FB624598BE500534D32 /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
 		DF4B9FB724598BE500534D32 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
 		DF4B9FB824598BE500534D32 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
-		DF9AC8F324952A6200781F67 /* TimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeUtil.swift; path = ../../../../Desktop/TimeUtil.swift; sourceTree = "<group>"; };
+		DF5E258424968C73001AEE57 /* TimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtil.swift; sourceTree = "<group>"; };
+		DF5E258A2496A2DD001AEE57 /* MyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyCustomCell.swift; path = "../../Trouble-Jungle/TroubleJungle/MyCustomCell.swift"; sourceTree = "<group>"; };
 		DF9AC8F524952D2B00781F67 /* storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,14 +141,15 @@
 				DF0207DF24546B8D00023B0E /* CardModel.swift */,
 				DF0207DD24546B6E00023B0E /* Card.swift */,
 				DF4B9FB224598B7700534D32 /* SoundManager.swift */,
+				DF5E258A2496A2DD001AEE57 /* MyCustomCell.swift */,
+				DF3807A42493975F00E59273 /* ScoreViewController.swift */,
 				DF3807A02493964500E59273 /* TopTenViewController.swift */,
 				DF3807A2249396F200E59273 /* MenuViewController.swift */,
-				DF3807A42493975F00E59273 /* ScoreViewController.swift */,
 				DF3807A624939A3500E59273 /* LocationModel.swift */,
 				DF3807A82493C96500E59273 /* GameStatus.swift */,
-				DF9AC8F324952A6200781F67 /* TimeUtil.swift */,
 				DF9AC8F524952D2B00781F67 /* storage.swift */,
 				DF3807AC249506E300E59273 /* ScoreDetails.swift */,
+				DF5E258424968C73001AEE57 /* TimeUtil.swift */,
 				DF0207B324546AA200023B0E /* Main.storyboard */,
 				DF0207B624546AA400023B0E /* Assets.xcassets */,
 				DF0207B824546AA400023B0E /* LaunchScreen.storyboard */,
@@ -327,12 +330,13 @@
 				DF0207B024546AA200023B0E /* SceneDelegate.swift in Sources */,
 				DF3807A3249396F200E59273 /* MenuViewController.swift in Sources */,
 				DF3807AD249506E300E59273 /* ScoreDetails.swift in Sources */,
+				DF5E258524968C73001AEE57 /* TimeUtil.swift in Sources */,
 				DF3807A724939A3500E59273 /* LocationModel.swift in Sources */,
 				DF0207DE24546B6E00023B0E /* Card.swift in Sources */,
 				DF4B9FB324598B7700534D32 /* SoundManager.swift in Sources */,
 				DF3807A52493975F00E59273 /* ScoreViewController.swift in Sources */,
 				DF3807A12493964500E59273 /* TopTenViewController.swift in Sources */,
-				DF9AC8F424952A6200781F67 /* TimeUtil.swift in Sources */,
+				DF5E258B2496A2DD001AEE57 /* MyCustomCell.swift in Sources */,
 				DF0207E024546B8D00023B0E /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

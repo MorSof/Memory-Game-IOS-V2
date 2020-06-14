@@ -37,7 +37,7 @@ class ScoreDetails: Codable{
     }
     
     func compareByTime(time: Int) -> Bool {
-        return self.time >= time
+        return self.time <= time
     }
     
     func equalTime(time: Int) -> Bool {
@@ -45,7 +45,7 @@ class ScoreDetails: Codable{
     }
     
     func compareByMoves(moves: Int) -> Bool {
-        return self.moves >= moves
+        return self.moves <= moves
     }
     
 }

@@ -40,10 +40,7 @@ class MenuViewController: UIViewController {
         if(segue.identifier == "NameTransition"){
             let vc = segue.destination as! OpenViewController
             vc.gameStatus = gameStatus
-        }else if(segue.identifier == "TopTenTransition"){
-//            _ = segue.destination as! ScoresController
         }
-    
     }
 }
 
