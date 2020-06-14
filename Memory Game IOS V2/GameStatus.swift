@@ -12,10 +12,16 @@ class GameStatus {
     var location : LocationModel?
     var level: String?
     var name: String?
+    var time: Int?
+    var moves: Int?
     var num_of_cards: Int?
     var num_of_rows: Int?
     var num_of_cols: Int?
+    var date: Date?
 
+    init() {
+        date = Date()
+    }
     
     public func set_locartion(location: LocationModel!){
         self.location = location
@@ -27,6 +33,14 @@ class GameStatus {
     
     public func set_name(name: String!){
         self.name = name
+    }
+    
+    public func set_time(time: Int!){
+        self.time = time
+    }
+    
+    public func set_moves(moves: Int!){
+        self.moves = moves
     }
     
     public func set_num_of_cards(num_of_cards: Int!){
@@ -53,16 +67,27 @@ class GameStatus {
         return self.name!
     }
     
+    public func get_time() -> Int!{
+        return self.time!
+    }
+    
+    public func get_moves() -> Int!{
+        return self.moves!
+    }
+    
     public func get_num_of_cards() -> Int!{
-        return self.num_of_cards
+        return self.num_of_cards!
     }
        
     public func get_num_of_rows() -> Int!{
-        return self.num_of_rows
+        return self.num_of_rows!
     }
        
     public func get_num_of_cols() -> Int!{
-        return self.num_of_cols
+        return self.num_of_cols!
     }
     
+    public func get_date() -> Date!{
+        return self.date!
+    }
 }

@@ -49,7 +49,6 @@ class MenuViewController: UIViewController {
 
 extension MenuViewController: CLLocationManagerDelegate {
     
-    //Do somthing when fetch location sucusses
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("didUpdateLocations")
         if let location = locations.last {
@@ -58,7 +57,6 @@ extension MenuViewController: CLLocationManagerDelegate {
         }
     }
     
-    //Do somthing when an error occured when trying fetch location
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error=\(error)")
         gameStatus.set_locartion(location: LocationModel(lat: 0, lng: 0))
