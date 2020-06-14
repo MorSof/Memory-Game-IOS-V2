@@ -478,6 +478,14 @@
                                     </mask>
                                 </variation>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bd-QY-xVV">
+                                <rect key="frame" x="340" y="818" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onChitterPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jh4-Tj-tg0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -507,9 +515,6 @@
                                 <exclude reference="LFb-Ic-RtK"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="3pD-xs-dOL"/>
-                                <exclude reference="X97-sb-VAP"/>
-                                <exclude reference="pmD-Cy-rzR"/>
                                 <exclude reference="9vG-MU-LI0"/>
                                 <exclude reference="AtL-6e-pod"/>
                                 <exclude reference="IXu-ux-tMO"/>
@@ -519,6 +524,9 @@
                                 <exclude reference="NxR-16-OHv"/>
                                 <exclude reference="RWu-rL-vOt"/>
                                 <exclude reference="x7o-BH-WUA"/>
+                                <exclude reference="3pD-xs-dOL"/>
+                                <exclude reference="X97-sb-VAP"/>
+                                <exclude reference="pmD-Cy-rzR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
@@ -527,14 +535,14 @@
                                 <include reference="LFb-Ic-RtK"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="3pD-xs-dOL"/>
-                                <include reference="X97-sb-VAP"/>
-                                <include reference="pmD-Cy-rzR"/>
                                 <include reference="9vG-MU-LI0"/>
                                 <include reference="IXu-ux-tMO"/>
                                 <include reference="989-fR-OEi"/>
                                 <include reference="NxR-16-OHv"/>
                                 <exclude reference="WeF-gW-aBu"/>
+                                <include reference="3pD-xs-dOL"/>
+                                <include reference="X97-sb-VAP"/>
+                                <include reference="pmD-Cy-rzR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">

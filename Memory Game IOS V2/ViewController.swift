@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var cardIndex = 0
     var num_of_moves: Int = 0
     var timer:Timer?
-    var actualTime:Float = 0
+    var gameSeconds:Int = 0
     var firstFlippedCard:UIImageView?
     var secondFlippedCard:UIImageView?
     var isWon = true
@@ -33,19 +33,13 @@ class ViewController: UIViewController {
         cardArray = CardModel(numOfCards: gameStatus.get_num_of_cards()).getCards()
         addingCardRows()
         movesLabel.text = "Moves: \(num_of_moves)"
-        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerRuninng), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerRuninng), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
     }
     
     @objc func timerRuninng() {
-        actualTime += 1
-        timerLabel.text = String(format: "Time: %.2f", actualTime/1000)
-        
-//        if actualTime <= 0 {
-//            timer?.invalidate()
-//            timerLabel.textColor = UIColor.red
-//            checkGameOver()
-//        }
+        gameSeconds += 1
+        timerLabel.text = TimeUtil.secondsToTime(gameSeconds: gameSeconds)
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -55,7 +49,7 @@ class ViewController: UIViewController {
     
     func gameLogic(_ tappedImage: UIImageView) {
         
-        if actualTime <= 0 {//when time is up stop logic
+        if gameSeconds <= 0 {//when time is up stop logic
             return
         }
         
@@ -134,17 +128,10 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "myScoreTransition"){
-        let scoreViewController = segue.destination as! ScoreViewController
-//        if isWon {
-//            vc.titleName = "Game Over You Won!"
-//        }else {
-//            vc.titleName = "Game Over You Lost!"
-//        }
-        scoreViewController.actualTime = Int(actualTime)
-        scoreViewController.num_of_moves = num_of_moves
-//        scoreViewController.lastGameNumOfRows = numOfRows
-//        scoreViewController.lastGameNumOfCardsPerRow = numOfCardsPerRow
-//        scoreViewController.userHighScore = HighScore(name: name, time: timePassed, location: myLocation,date: Date())
+            gameStatus.set_time(time: gameSeconds)
+            gameStatus.set_moves(moves: num_of_moves)
+            let scoreViewController = segue.destination as! ScoreViewController
+            scoreViewController.gameStatus = gameStatus
         }
     }
     
@@ -186,5 +173,8 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func onChitterPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "myScoreTransition", sender: self)
+    }
 }
 

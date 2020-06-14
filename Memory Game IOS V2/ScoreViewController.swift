@@ -15,24 +15,45 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var BTN_restart: UIButton!
     @IBOutlet weak var BTN_menu: UIButton!
     
-    var num_of_moves : Int!
-    var actualTime : Int!
-    var lastGameNumOfRows: Int!;
-    var lastGameNumOfCardsPerRow: Int!;
-    var chosenOption : String!
-//    var timerHelper : TimerHelper!
-    var name : String!
-    var myLocation : LocationModel!
-//    var highScores = [HighScore]()
-//    var userHighScore : HighScore!
+    
+    var allScores = [ScoreDetails]()
+    var myScore: ScoreDetails!
+    var gameStatus: GameStatus!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LBL_time.text = String(actualTime)
-        LBL_score.text = String(num_of_moves)
+        myScore = ScoreDetails(name: gameStatus.get_name(), time: gameStatus.get_time(), moves: gameStatus.get_moves(), location: gameStatus.get_locartion(), date: gameStatus.get_date())
+        LBL_time.text = TimeUtil.secondsToTime(gameSeconds: gameStatus.get_time())
+        LBL_score.text = String(gameStatus.get_moves())
+        scoresLogic()
     }
     
-
+    func scoresLogic(){
+        allScores = Storage.fetch()
+        if(allScores.isEmpty){
+            allScores.append(myScore)
+            return
+        }
+        if(allScores.count < 10){
+            insertToScores()
+        }
+        if(allScores.count > 10){
+            allScores.remove(at: allScores.count - 1)
+        }
+        Storage.save(scoreDetails: allScores)
+    }
+        
+    func insertToScores(){
+        for i in  0 ..< allScores.count {
+            if(myScore.compareTo(otherScore: allScores[i])){
+                allScores.insert(myScore, at: i)
+                return
+            }
+        }
+        allScores.insert(myScore, at: allScores.count)
+    }
+    
     @IBAction func onRestart(_ sender: UIButton) {
         self.performSegue(withIdentifier: "RestartTransition", sender: self)
     }
@@ -45,16 +66,10 @@ class ScoreViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if(segue.identifier == "RestartTransition"){
-            print("here man!")
-//            let gamePage = segue.destination as! GameController
-//            gamePage.numOfRows = lastGameNumOfRows
-//            gamePage.numOfCardsPerRow = lastGameNumOfCardsPerRow
-//            gamePage.name = userHighScore.name
-//            gamePage.myLocation = userHighScore.location
-//
-            
+            let vc = segue.destination as! ViewController
+            vc.gameStatus = gameStatus
         } else if(segue.identifier == "MenuTransition"){
-//            _ = segue.destination as! MenuController
+            
         }
         
     }

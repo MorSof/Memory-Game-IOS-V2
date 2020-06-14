@@ -23,4 +23,29 @@ class ScoreDetails: Codable{
         self.date = date
     }
     
+    func compareTo(otherScore: ScoreDetails) -> Bool{
+        if (compareByTime(time: otherScore.time)){
+            if(equalTime(time: otherScore.time)){
+                if(compareByMoves(moves: otherScore.moves)){
+                    return true
+                }
+                return false
+            }
+            return true
+        }
+        return false
+    }
+    
+    func compareByTime(time: Int) -> Bool {
+        return self.time >= time
+    }
+    
+    func equalTime(time: Int) -> Bool {
+        return self.time == time
+    }
+    
+    func compareByMoves(moves: Int) -> Bool {
+        return self.moves >= moves
+    }
+    
 }
