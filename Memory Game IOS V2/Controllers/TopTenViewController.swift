@@ -38,7 +38,7 @@ class TopTenViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func showPoint(index : Int){
-        newCamera = MKMapCamera(lookingAtCenter: CLLocationCoordinate2D(latitude: allScores[index].location.lat!, longitude: allScores[index].location.lng!), fromDistance: 300.0, pitch: 90.0, heading: 180.0)
+        newCamera = MKMapCamera(lookingAtCenter: CLLocationCoordinate2D(latitude: allScores[index].location.lat!, longitude: allScores[index].location.lng!), fromDistance: 30000, pitch: 0.0, heading: 0.0)
         self.MAP_map.setCamera(newCamera, animated: true)
     }
     
@@ -58,16 +58,12 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        var cell : Cell? = self.TABLE_tabel.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as? Cell
-       
         cell?.LBL_score?.text = String(self.allScores[indexPath.row].time)
         cell?.LBL_name?.text = String(self.allScores[indexPath.row].name).lowercased()
-        cell?.LBL_date.text = "\(self.allScores[indexPath.row].date)"
-
-       
+        cell?.LBL_date.text = TimeDateUtil.myDateFormat(date: self.allScores[indexPath.row].date)
         if(cell == nil){
             cell = Cell(style: UITableViewCell.CellStyle.default, reuseIdentifier: cellReuseIdentifier)
         }
-       
         return cell!
    }
    

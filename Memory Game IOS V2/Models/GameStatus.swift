@@ -9,15 +9,15 @@
 import Foundation
 class GameStatus {
     
-    var location : LocationModel?
-    var level: String?
-    var name: String?
-    var time: Int?
-    var moves: Int?
-    var num_of_cards: Int?
-    var num_of_rows: Int?
-    var num_of_cols: Int?
-    var date: Date?
+    private var location : LocationModel?
+    private var level: String?
+    private var name: String?
+    private var time: Int?
+    private var moves: Int?
+    private var num_of_cards: Int?
+    private var num_of_rows: Int?
+    private var num_of_cols: Int?
+    private var date: Date?
 
     init() {
         date = Date()

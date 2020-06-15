@@ -38,7 +38,7 @@ class MenuViewController: UIViewController {
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "NameTransition"){
-            let vc = segue.destination as! OpenViewController
+            let vc = segue.destination as! InfoController
             vc.gameStatus = gameStatus
         }
     }
@@ -47,7 +47,6 @@ class MenuViewController: UIViewController {
 extension MenuViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("didUpdateLocations")
         if let location = locations.last {
             locationManager.stopUpdatingLocation()
             gameStatus.set_locartion(location: LocationModel(lat:location.coordinate.latitude, lng: location.coordinate.latitude))
@@ -55,7 +54,6 @@ extension MenuViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error=\(error)")
         gameStatus.set_locartion(location: LocationModel(lat: 0, lng: 0))
     }
 }

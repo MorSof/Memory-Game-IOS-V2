@@ -22,15 +22,15 @@
 		DF3807A52493975F00E59273 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3807A42493975F00E59273 /* ScoreViewController.swift */; };
 		DF3807A724939A3500E59273 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3807A624939A3500E59273 /* LocationModel.swift */; };
 		DF3807A92493C96500E59273 /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3807A82493C96500E59273 /* GameStatus.swift */; };
-		DF3807AB2493D4D000E59273 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0207B124546AA200023B0E /* ViewController.swift */; };
+		DF3807AB2493D4D000E59273 /* PlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0207B124546AA200023B0E /* PlayController.swift */; };
 		DF3807AD249506E300E59273 /* ScoreDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3807AC249506E300E59273 /* ScoreDetails.swift */; };
-		DF4B9FB124576F9D00534D32 /* OpenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B9FB024576F9D00534D32 /* OpenViewController.swift */; };
+		DF4B9FB124576F9D00534D32 /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B9FB024576F9D00534D32 /* InfoController.swift */; };
 		DF4B9FB324598B7700534D32 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B9FB224598B7700534D32 /* SoundManager.swift */; };
 		DF4B9FB924598BE500534D32 /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = DF4B9FB524598BE500534D32 /* dingcorrect.wav */; };
 		DF4B9FBA24598BE500534D32 /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = DF4B9FB624598BE500534D32 /* dingwrong.wav */; };
 		DF4B9FBB24598BE500534D32 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = DF4B9FB724598BE500534D32 /* shuffle.wav */; };
 		DF4B9FBC24598BE500534D32 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = DF4B9FB824598BE500534D32 /* cardflip.wav */; };
-		DF5E258524968C73001AEE57 /* TimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5E258424968C73001AEE57 /* TimeUtil.swift */; };
+		DF5E0C8B2497848800BBFE8B /* TimeDateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5E0C8A2497848800BBFE8B /* TimeDateUtil.swift */; };
 		DF9AC8F624952D2B00781F67 /* storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9AC8F524952D2B00781F67 /* storage.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		DF0207AA24546AA200023B0E /* Memory Game IOS V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memory Game IOS V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0207AD24546AA200023B0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF0207AF24546AA200023B0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DF0207B124546AA200023B0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF0207B124546AA200023B0E /* PlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayController.swift; sourceTree = "<group>"; };
 		DF0207B424546AA200023B0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF0207B624546AA400023B0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF0207B924546AA400023B0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,13 +75,13 @@
 		DF3807A624939A3500E59273 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		DF3807A82493C96500E59273 /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 		DF3807AC249506E300E59273 /* ScoreDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreDetails.swift; sourceTree = "<group>"; };
-		DF4B9FB024576F9D00534D32 /* OpenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenViewController.swift; sourceTree = "<group>"; };
+		DF4B9FB024576F9D00534D32 /* InfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
 		DF4B9FB224598B7700534D32 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		DF4B9FB524598BE500534D32 /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
 		DF4B9FB624598BE500534D32 /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
 		DF4B9FB724598BE500534D32 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
 		DF4B9FB824598BE500534D32 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
-		DF5E258424968C73001AEE57 /* TimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtil.swift; sourceTree = "<group>"; };
+		DF5E0C8A2497848800BBFE8B /* TimeDateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDateUtil.swift; sourceTree = "<group>"; };
 		DF9AC8F524952D2B00781F67 /* storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,26 +133,14 @@
 		DF0207AC24546AA200023B0E /* Memory Game IOS V2 */ = {
 			isa = PBXGroup;
 			children = (
+				DF5E0C8F24979AF400BBFE8B /* Delegates */,
+				DF5E0C8E249799DE00BBFE8B /* Controllers */,
+				DF5E0C8D249799B000BBFE8B /* Utils */,
+				DF5E0C8C249798B100BBFE8B /* Models */,
 				DF4B9FB424598BBE00534D32 /* Sounds */,
-				DF0207AD24546AA200023B0E /* AppDelegate.swift */,
-				DF0207AF24546AA200023B0E /* SceneDelegate.swift */,
-				DF0207B124546AA200023B0E /* ViewController.swift */,
-				DF4B9FB024576F9D00534D32 /* OpenViewController.swift */,
-				DF0207DF24546B8D00023B0E /* CardModel.swift */,
-				DF0207DD24546B6E00023B0E /* Card.swift */,
-				DF4B9FB224598B7700534D32 /* SoundManager.swift */,
-				DF239AE724975A5C007C4840 /* Cell.swift */,
-				DF3807A42493975F00E59273 /* ScoreViewController.swift */,
-				DF3807A02493964500E59273 /* TopTenViewController.swift */,
-				DF3807A2249396F200E59273 /* MenuViewController.swift */,
-				DF3807A624939A3500E59273 /* LocationModel.swift */,
-				DF3807A82493C96500E59273 /* GameStatus.swift */,
-				DF9AC8F524952D2B00781F67 /* storage.swift */,
-				DF3807AC249506E300E59273 /* ScoreDetails.swift */,
-				DF5E258424968C73001AEE57 /* TimeUtil.swift */,
 				DF0207B324546AA200023B0E /* Main.storyboard */,
-				DF0207B624546AA400023B0E /* Assets.xcassets */,
 				DF0207B824546AA400023B0E /* LaunchScreen.storyboard */,
+				DF0207B624546AA400023B0E /* Assets.xcassets */,
 				DF0207BB24546AA400023B0E /* Info.plist */,
 			);
 			path = "Memory Game IOS V2";
@@ -185,6 +173,50 @@
 				DF4B9FB724598BE500534D32 /* shuffle.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		DF5E0C8C249798B100BBFE8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF3807A624939A3500E59273 /* LocationModel.swift */,
+				DF0207DF24546B8D00023B0E /* CardModel.swift */,
+				DF0207DD24546B6E00023B0E /* Card.swift */,
+				DF239AE724975A5C007C4840 /* Cell.swift */,
+				DF3807A82493C96500E59273 /* GameStatus.swift */,
+				DF3807AC249506E300E59273 /* ScoreDetails.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DF5E0C8D249799B000BBFE8B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF9AC8F524952D2B00781F67 /* storage.swift */,
+				DF4B9FB224598B7700534D32 /* SoundManager.swift */,
+				DF5E0C8A2497848800BBFE8B /* TimeDateUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DF5E0C8E249799DE00BBFE8B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF3807A2249396F200E59273 /* MenuViewController.swift */,
+				DF0207B124546AA200023B0E /* PlayController.swift */,
+				DF4B9FB024576F9D00534D32 /* InfoController.swift */,
+				DF3807A02493964500E59273 /* TopTenViewController.swift */,
+				DF3807A42493975F00E59273 /* ScoreViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DF5E0C8F24979AF400BBFE8B /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				DF0207AF24546AA200023B0E /* SceneDelegate.swift */,
+				DF0207AD24546AA200023B0E /* AppDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,14 +356,14 @@
 			files = (
 				DF9AC8F624952D2B00781F67 /* storage.swift in Sources */,
 				DF3807A92493C96500E59273 /* GameStatus.swift in Sources */,
-				DF3807AB2493D4D000E59273 /* ViewController.swift in Sources */,
+				DF3807AB2493D4D000E59273 /* PlayController.swift in Sources */,
 				DF0207AE24546AA200023B0E /* AppDelegate.swift in Sources */,
-				DF4B9FB124576F9D00534D32 /* OpenViewController.swift in Sources */,
+				DF4B9FB124576F9D00534D32 /* InfoController.swift in Sources */,
 				DF239AE824975A5C007C4840 /* Cell.swift in Sources */,
 				DF0207B024546AA200023B0E /* SceneDelegate.swift in Sources */,
 				DF3807A3249396F200E59273 /* MenuViewController.swift in Sources */,
+				DF5E0C8B2497848800BBFE8B /* TimeDateUtil.swift in Sources */,
 				DF3807AD249506E300E59273 /* ScoreDetails.swift in Sources */,
-				DF5E258524968C73001AEE57 /* TimeUtil.swift in Sources */,
 				DF3807A724939A3500E59273 /* LocationModel.swift in Sources */,
 				DF0207DE24546B6E00023B0E /* Card.swift in Sources */,
 				DF4B9FB324598B7700534D32 /* SoundManager.swift in Sources */,

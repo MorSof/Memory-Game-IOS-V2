@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OpenViewController: UIViewController {
+class InfoController: UIViewController {
     
     @IBOutlet weak var BTN_lets_go: UIButton!
     @IBOutlet weak var TXT_name: UITextField!
@@ -37,7 +37,7 @@ class OpenViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "gameTransition"){
-            let vc = segue.destination as! ViewController
+            let vc = segue.destination as! PlayController
             if(gameStatus.get_level() == "Easy"){
                 gameStatus.set_num_of_cards(num_of_cards: 12)
                 gameStatus.set_num_of_rows(num_of_rows: 3)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PlayController: UIViewController {
 
     @IBOutlet weak var allCardsStack: UIStackView!
     @IBOutlet weak var timerLabel: UILabel!
@@ -32,14 +32,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         cardArray = CardModel(numOfCards: gameStatus.get_num_of_cards()).getCards()
         addingCardRows()
-        movesLabel.text = "Moves: \(num_of_moves)"
+        movesLabel.text = String(num_of_moves)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerRuninng), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
     }
     
     @objc func timerRuninng() {
         gameSeconds += 1
-        timerLabel.text = TimeUtil.secondsToTime(gameSeconds: gameSeconds)
+        timerLabel.text = TimeDateUtil.secondsToTime(gameSeconds: gameSeconds)
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     
     func secondCardChosen(_ card: Card, _ tappedImage: UIImageView) {
         num_of_moves += 1
-        movesLabel.text = "Moves \(self.num_of_moves)"
+        movesLabel.text = String(num_of_moves)
         if isEqualCards() {
             whenEqualLogic()
             self.firstFlippedCard = nil
@@ -176,5 +176,7 @@ class ViewController: UIViewController {
     @IBAction func onChitterPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "myScoreTransition", sender: self)
     }
+    
+
 }
 

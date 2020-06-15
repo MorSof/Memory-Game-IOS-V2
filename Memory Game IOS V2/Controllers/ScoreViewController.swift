@@ -24,7 +24,7 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         myScore = ScoreDetails(name: gameStatus.get_name(), time: gameStatus.get_time(), moves: gameStatus.get_moves(), location: gameStatus.get_locartion(), date: gameStatus.get_date())
-        LBL_time.text = TimeUtil.secondsToTime(gameSeconds: gameStatus.get_time())
+        LBL_time.text = TimeDateUtil.secondsToTime(gameSeconds: gameStatus.get_time())
         LBL_score.text = String(gameStatus.get_moves())
         scoresLogic()
     }
@@ -36,7 +36,7 @@ class ScoreViewController: UIViewController {
             Storage.save(scoreDetails: allScores)
             return
         }
-        if(allScores.count < 10){
+        if(allScores.count <= 10){
             insertToScores()
         }
         if(allScores.count > 10){
@@ -48,7 +48,6 @@ class ScoreViewController: UIViewController {
     func insertToScores(){
         for i in  0 ..< allScores.count {
             if(myScore.compareTo(otherScore: allScores[i])){
-                print("here")
                 allScores.insert(myScore, at: i)
                 return
             }
@@ -68,7 +67,7 @@ class ScoreViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if(segue.identifier == "RestartTransition"){
-            let vc = segue.destination as! ViewController
+            let vc = segue.destination as! PlayController
             vc.gameStatus = gameStatus
         } else if(segue.identifier == "MenuTransition"){
             

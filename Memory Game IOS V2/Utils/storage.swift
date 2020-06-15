@@ -28,11 +28,10 @@ class Storage {
     static func convertJsonToScoreDetails(json: String) ->[ScoreDetails]{
         let decoder = JSONDecoder()
         let data = Data(json.utf8)
-        print(json)
         do {
             return try decoder.decode([ScoreDetails].self, from: data)
         } catch {
-            print("somthing went wrong in convertJsonToScoreDetails")
+            print("somthing went wrong converting from JSON")
         }
         return [ScoreDetails]()
     }
