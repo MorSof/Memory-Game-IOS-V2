@@ -201,8 +201,8 @@
 		DF5E0C8E249799DE00BBFE8B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DF3807A2249396F200E59273 /* MenuViewController.swift */,
 				DF0207B124546AA200023B0E /* PlayController.swift */,
+				DF3807A2249396F200E59273 /* MenuViewController.swift */,
 				DF4B9FB024576F9D00534D32 /* InfoController.swift */,
 				DF3807A02493964500E59273 /* TopTenViewController.swift */,
 				DF3807A42493975F00E59273 /* ScoreViewController.swift */,

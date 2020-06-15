@@ -171,12 +171,14 @@ class PlayController: UIViewController {
                            tappedImage.image = image
             })
     }
-
-
-    @IBAction func onChitterPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "myScoreTransition", sender: self)
-    }
     
+    @IBAction func BTN_return(_ sender: UIButton) {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 
 }
 
