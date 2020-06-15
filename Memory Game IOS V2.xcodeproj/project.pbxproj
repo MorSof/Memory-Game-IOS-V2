@@ -16,6 +16,7 @@
 		DF0207D024546AA400023B0E /* Memory_Game_IOS_V2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0207CF24546AA400023B0E /* Memory_Game_IOS_V2UITests.swift */; };
 		DF0207DE24546B6E00023B0E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0207DD24546B6E00023B0E /* Card.swift */; };
 		DF0207E024546B8D00023B0E /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0207DF24546B8D00023B0E /* CardModel.swift */; };
+		DF239AE824975A5C007C4840 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF239AE724975A5C007C4840 /* Cell.swift */; };
 		DF3807A12493964500E59273 /* TopTenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3807A02493964500E59273 /* TopTenViewController.swift */; };
 		DF3807A3249396F200E59273 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3807A2249396F200E59273 /* MenuViewController.swift */; };
 		DF3807A52493975F00E59273 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3807A42493975F00E59273 /* ScoreViewController.swift */; };
@@ -30,7 +31,6 @@
 		DF4B9FBB24598BE500534D32 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = DF4B9FB724598BE500534D32 /* shuffle.wav */; };
 		DF4B9FBC24598BE500534D32 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = DF4B9FB824598BE500534D32 /* cardflip.wav */; };
 		DF5E258524968C73001AEE57 /* TimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5E258424968C73001AEE57 /* TimeUtil.swift */; };
-		DF5E258B2496A2DD001AEE57 /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5E258A2496A2DD001AEE57 /* MyCustomCell.swift */; };
 		DF9AC8F624952D2B00781F67 /* storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9AC8F524952D2B00781F67 /* storage.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +68,7 @@
 		DF0207D124546AA400023B0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF0207DD24546B6E00023B0E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		DF0207DF24546B8D00023B0E /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		DF239AE724975A5C007C4840 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		DF3807A02493964500E59273 /* TopTenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenViewController.swift; sourceTree = "<group>"; };
 		DF3807A2249396F200E59273 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DF3807A42493975F00E59273 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		DF4B9FB724598BE500534D32 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
 		DF4B9FB824598BE500534D32 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
 		DF5E258424968C73001AEE57 /* TimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtil.swift; sourceTree = "<group>"; };
-		DF5E258A2496A2DD001AEE57 /* MyCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyCustomCell.swift; path = "../../Trouble-Jungle/TroubleJungle/MyCustomCell.swift"; sourceTree = "<group>"; };
 		DF9AC8F524952D2B00781F67 /* storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,7 +141,7 @@
 				DF0207DF24546B8D00023B0E /* CardModel.swift */,
 				DF0207DD24546B6E00023B0E /* Card.swift */,
 				DF4B9FB224598B7700534D32 /* SoundManager.swift */,
-				DF5E258A2496A2DD001AEE57 /* MyCustomCell.swift */,
+				DF239AE724975A5C007C4840 /* Cell.swift */,
 				DF3807A42493975F00E59273 /* ScoreViewController.swift */,
 				DF3807A02493964500E59273 /* TopTenViewController.swift */,
 				DF3807A2249396F200E59273 /* MenuViewController.swift */,
@@ -327,6 +327,7 @@
 				DF3807AB2493D4D000E59273 /* ViewController.swift in Sources */,
 				DF0207AE24546AA200023B0E /* AppDelegate.swift in Sources */,
 				DF4B9FB124576F9D00534D32 /* OpenViewController.swift in Sources */,
+				DF239AE824975A5C007C4840 /* Cell.swift in Sources */,
 				DF0207B024546AA200023B0E /* SceneDelegate.swift in Sources */,
 				DF3807A3249396F200E59273 /* MenuViewController.swift in Sources */,
 				DF3807AD249506E300E59273 /* ScoreDetails.swift in Sources */,
@@ -336,7 +337,6 @@
 				DF4B9FB324598B7700534D32 /* SoundManager.swift in Sources */,
 				DF3807A52493975F00E59273 /* ScoreViewController.swift in Sources */,
 				DF3807A12493964500E59273 /* TopTenViewController.swift in Sources */,
-				DF5E258B2496A2DD001AEE57 /* MyCustomCell.swift in Sources */,
 				DF0207E024546B8D00023B0E /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

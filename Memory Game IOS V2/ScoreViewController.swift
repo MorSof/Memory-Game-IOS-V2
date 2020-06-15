@@ -33,6 +33,7 @@ class ScoreViewController: UIViewController {
         allScores = Storage.fetch()
         if(allScores.isEmpty){
             allScores.append(myScore)
+            Storage.save(scoreDetails: allScores)
             return
         }
         if(allScores.count < 10){
@@ -47,6 +48,7 @@ class ScoreViewController: UIViewController {
     func insertToScores(){
         for i in  0 ..< allScores.count {
             if(myScore.compareTo(otherScore: allScores[i])){
+                print("here")
                 allScores.insert(myScore, at: i)
                 return
             }

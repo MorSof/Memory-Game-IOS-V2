@@ -15,7 +15,6 @@ class Storage {
     static func fetch() -> [ScoreDetails]{
         let json = UserDefaults.standard.string(forKey: SCORES_KEY)
         if let safeHighScoresJson = json {
-            print("myArray:" + (json ?? "sex"))
             return convertJsonToScoreDetails(json: safeHighScoresJson)
         }
         return [ScoreDetails]()
@@ -29,6 +28,7 @@ class Storage {
     static func convertJsonToScoreDetails(json: String) ->[ScoreDetails]{
         let decoder = JSONDecoder()
         let data = Data(json.utf8)
+        print(json)
         do {
             return try decoder.decode([ScoreDetails].self, from: data)
         } catch {

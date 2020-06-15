@@ -14,7 +14,6 @@ class TopTenViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var allScores = [ScoreDetails]()
     let cellReuseIdentifier = "score_cell"
     var newCamera: MKMapCamera!
-    var tropicalImages = [#imageLiteral(resourceName: "card10"),#imageLiteral(resourceName: "card6"),#imageLiteral(resourceName: "card11"),#imageLiteral(resourceName: "card13"),#imageLiteral(resourceName: "card7"),#imageLiteral(resourceName: "card2"),#imageLiteral(resourceName: "card3"),#imageLiteral(resourceName: "card5")]
 
     @IBOutlet weak var TABLE_tabel: UITableView!
     @IBOutlet weak var MAP_map: MKMapView!
@@ -58,16 +57,15 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       var cell : MyCustomCell? = self.TABLE_tabel.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as? MyCustomCell
+       var cell : Cell? = self.TABLE_tabel.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as? Cell
        
         cell?.LBL_score?.text = String(self.allScores[indexPath.row].time)
         cell?.LBL_name?.text = String(self.allScores[indexPath.row].name).lowercased()
         cell?.LBL_date.text = "\(self.allScores[indexPath.row].date)"
-        cell?.IMG_img?.image = tropicalImages[indexPath.row % tropicalImages.count]
-   
+
        
         if(cell == nil){
-            cell = MyCustomCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: cellReuseIdentifier)
+            cell = Cell(style: UITableViewCell.CellStyle.default, reuseIdentifier: cellReuseIdentifier)
         }
        
         return cell!
